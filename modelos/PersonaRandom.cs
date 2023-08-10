@@ -1,7 +1,6 @@
-﻿namespace Random.modelos
+﻿namespace RandomAPI.modelos
 {
     public class PersonaRandom
     {
-        //clase que generea nombres aleatorios...
     }
 }
