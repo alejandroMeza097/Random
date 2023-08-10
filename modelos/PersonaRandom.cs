@@ -2,5 +2,6 @@
 {
     public class PersonaRandom
     {
+        //clase que generea nombres aleatorios...
     }
 }
