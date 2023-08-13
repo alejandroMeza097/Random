@@ -36,7 +36,7 @@ namespace RandomAPI.Controllers
                 int lineasAfectadas = 0;
                 using (SqlConnection sqlConnection = new SqlConnection(cadenaConexion))
                 {
-                    for (int i = 0; i < 250; i++)
+                    for (int i = 0; i < 125; i++)
                     {
                         string consulta = string.Format("INSERT INTO PersonaRandom(Nombre, Apellido) VALUES ('{0}','{1}')", personaRandom.NombreHombreHRandom(), personaRandom.ApellidoRandom());
                         SqlCommand cmd = new SqlCommand(consulta, sqlConnection);
@@ -45,7 +45,17 @@ namespace RandomAPI.Controllers
                         sqlConnection.Close();
 
                     }
-                   
+
+                    for (int i = 0; i < 125; i++)
+                    {
+                        string consulta = string.Format("INSERT INTO PersonaRandom(Nombre, Apellido) VALUES ('{0}','{1}')", personaRandom.NombreMujerRandom(), personaRandom.ApellidoRandom());
+                        SqlCommand cmd = new SqlCommand(consulta, sqlConnection);
+                        sqlConnection.Open();
+                        lineasAfectadas = lineasAfectadas + cmd.ExecuteNonQuery();
+                        sqlConnection.Close();
+
+                    }
+
                     return Ok("Registros Creados : " + Convert.ToString(lineasAfectadas));
 
                 }
