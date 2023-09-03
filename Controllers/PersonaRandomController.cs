@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RandomAPI.modelos;
@@ -23,7 +24,7 @@ namespace RandomAPI.Controllers
 
 
 
-
+        //EndPoint HttpPost...
         [HttpPost]
         [Route("AddPersonaRandom")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -72,7 +73,7 @@ namespace RandomAPI.Controllers
         }
 
 
-        //End point HttpGet con api...
+        //Endpoint HttpPost con api...
         [HttpPost]
         [Route("AddUniversity")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -122,6 +123,18 @@ namespace RandomAPI.Controllers
             
 
         }
+
+
+        //Endpoint HttpPost Excel...
+        [HttpPost]
+        [Route("AddExcel")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult AddExcel()
+        {
+                                  
+        }
+
     }
 }
 
