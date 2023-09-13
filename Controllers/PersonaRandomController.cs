@@ -132,7 +132,11 @@ namespace RandomAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult AddExcel()
         {
-                                  
+            var excelFile = new LinqToExcel.ExcelQueryFactory("");
+            Console.WriteLine(excelFile.ToString());
+            return Ok(excelFile);
+           
+
         }
 
     }
